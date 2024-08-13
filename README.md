@@ -64,7 +64,7 @@ Find your username in the linux host, running `echo $USER` in the terminal and c
 
 **`Dockerfile`**:
 - find the line `USERNAME=CHANGE_ME`
-- change `CHANGE_ME` with the linux username you copied
+- change `USERNAME_REPLACE_ME` with the linux username you copied
 
 **`devcontainer.json`**:
 - open the file in VS Code and search the file with `Ctrl + F`
@@ -120,6 +120,11 @@ RUN apt install -y htop
 
 The root folder of the repository will be mounted inside the docker container. As such, all the files in the repository will be available inside the docker container and all the files you create in the docker container **inside** the `/home/YOUR_USERNAME/ws` will remain in the repository.
 
+## Test the container:
+
+- verify that the GPU is available using `nvidia-smi`. You should see info about your GPU.
+- verify that you can install repositories from apt: `sudo apt install nvtop`. Test the installation with `nvtop`.
+- verify that ros is working: `. /opt/ros/humble/setup.bash && ros2 run rviz2 rviz2`. Rviz should open.
 
 ## Authors
 
