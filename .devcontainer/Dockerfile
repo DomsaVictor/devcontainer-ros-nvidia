@@ -1,6 +1,6 @@
 FROM ros:humble
 # FROM nvcr.io/nvidia/isaac/ros:x86_64-ros2_humble_45d368cdbbe4a484643464d0d492c764
-ARG USERNAME=victor
+ARG USERNAME=CHANGE_ME
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
@@ -17,11 +17,14 @@ RUN apt-get update \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 RUN apt-get update && apt-get upgrade -y --allow-downgrades
+# Install packages from apt
 RUN apt-get install -y python3-pip
 RUN apt-get install -y ignition-fortress
+RUN apt install -y ros-humble-clearpath-desktop
+# these 2 might already be installed, but for now we leave them here.
 RUN apt-get install -y ros-humble-clearpath-simulator
 RUN apt-get -y install ros-humble-clearpath-nav2-demos
-RUN mkdir -p /home/ws
+RUN mkdir -p /home/$USERNAME/ws
 ENV SHELL /bin/bash
 
 # ********************************************************

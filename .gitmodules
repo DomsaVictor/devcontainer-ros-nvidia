@@ -1,3 +1,0 @@
-[submodule "clearpath_common"]
-    path = ws/clearpath_common
-    url=https://github.com/clearpathrobotics/clearpath_common.git

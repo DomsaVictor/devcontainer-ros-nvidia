@@ -1,15 +1,15 @@
 {
-    "name": "ROS 2 Development Container",
+    "name": "ROS 2 Development Container with Nvidia",
     "privileged": true,
-    "remoteUser": "victor",
+    "remoteUser": "USERNAME_REPLACE_ME",
     "build": {
         "dockerfile": "Dockerfile",
         "args": {
-            "USERNAME": "victor"
+            "USERNAME": "USERNAME_REPLACE_ME"
         }
     },
-    "workspaceFolder": "/home/ws",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/home/ws/src,type=bind",
+    "workspaceFolder": "/home/USERNAME_REPLACE_ME/ws",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/USERNAME_REPLACE_ME/,type=bind",
     "customizations": {
         "vscode": {
             "extensions":[
@@ -32,11 +32,10 @@
         "-e", "DISPLAY=${env:DISPLAY}",
         "--gpus=all",
         "--runtime=nvidia"
-        // "--user=$(id -u $USER):$(id -g $USER)"
     ],
     "mounts": [
        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
         "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached"
     ],
-    "postCreateCommand": "sudo rosdep update && sudo rosdep install --from-paths src --ignore-src -y && sudo chown -R $(whoami) /home/ws/"
+    "postCreateCommand": "sudo rosdep update && sudo rosdep install --from-paths src --ignore-src -y && sudo chown -R $(whoami) /home/USERNAME_REPLACE_ME/"
 }
