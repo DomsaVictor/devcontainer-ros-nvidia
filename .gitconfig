@@ -1,5 +1,0 @@
-[user]
-	email = domsavictor@gmail.com
-	name = DomsaVictor
-[credential]
-	helper = "!f() { /home/victor/.vscode-server/bin/eaa41d57266683296de7d118f574d0c2652e1fc4/node /tmp/vscode-remote-containers-c3c1ea5e-3846-4863-9bcd-d477910b5824.js git-credential-helper $*; }; f"
