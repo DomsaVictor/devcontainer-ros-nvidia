@@ -7,6 +7,11 @@ The container comes with the following ROS Humble packages already installed:
 - ros-humble-clearpath-simulator
 - ros-humble-clearpath-nav2-demos
 
+## Sources and other docs
+
+- https://docs.ros.org/en/iron/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container.html
+- https://catalog.ngc.nvidia.com/orgs/nvidia/teams/isaac/containers/ros
+- https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common
 
 ## Getting Started
 
