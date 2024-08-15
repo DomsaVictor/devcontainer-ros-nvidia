@@ -26,7 +26,7 @@ In order to run this container you'll need docker installed.
 * [Linux](https://docs.docker.com/linux/started/)
 * [Windows](https://docs.docker.com/windows/started)
 
-**Note:** windows should work as long as the Windows Subsystem for Linux is installed but it is NOT tested.
+**Note:** windows should work as long as the Windows Subsystem for Linux (WSL) is installed, GUI apps are working from the WSL and the Nvidia GPU drivers are installed and working in the WSL. As of now, installation under Windows is *NOT* tested.
 
 #### Nvidia Drivers and the Nvidia Container Toolkit
 
