@@ -21,16 +21,33 @@ These instructions will cover usage information and for the docker container
 
 Make sure that you have at least **15 GB** free. The final container will have ~5 GB but building it along with the other dependencies will take more space.
 
+If running on windows, you will need to install [Windwos Subsystem for Linux (WSL)]("https://learn.microsoft.com/en-us/windows/wsl/install"), which you can will install and setup following the next section.
+
+#### WINDOWS only:
+
+Make sure your Nvidia drivers are up to date and you have VSCode installed.
+
+Install WSL with:
+- open a cmd or PowerShell **as administrator**
+- run `wsl --install`
+- **restart windows**
+
+To open the WSL run `wsl` in a cmd or PowerShell. In the resulting windows, run `code .`
+
+Make sure the Nvidia drivers are working with `nvidia-smi`
+
+If everything is Ok, continue with the following sections. All the commands from now on must be run *inside* the WSL. 
+
+### Setup
+
 In order to run this container you'll need docker installed.
 
 * [Linux](https://docs.docker.com/linux/started/)
-* [Windows](https://docs.docker.com/windows/started)
 
-**Note:** windows should work as long as the Windows Subsystem for Linux (WSL) is installed, GUI apps are working from the WSL and the Nvidia GPU drivers are installed and working in the WSL. As of now, installation under Windows is *NOT* tested.
 
 #### Nvidia Drivers and the Nvidia Container Toolkit
 
-- Make sure that your drivers are installed (proprietary, not nouveau) and up to date. Follow [these instructions for Ubuntu]().
+- Make sure that your drivers are installed (proprietary, not nouveau) and up to date. Follow [these instructions for Ubuntu](https://ubuntu.com/server/docs/nvidia-drivers-installation). You can skip this for Windows/WSL.
 - The Container Toolkit can be installed under Ubuntu from [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html). Follow the instructions from:
     - Installation
         - Prerequisites
